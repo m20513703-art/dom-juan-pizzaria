@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#11100f" name="theme-color"/>
+  <title>
+   Dom Juan · PDV demonstrativo
+  </title>
+  <link href="pdv.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="demo-banner">
+   DEMO DE APRESENTAÇÃO · PEDIDOS FICTÍCIOS · SITE E PDV SINCRONIZADOS NESTE NAVEGADOR
+  </div>
+  <header class="topbar">
+   <div class="brand">
+    <span class="brand-mark">
+     🍕
+    </span>
+    <span>
+     DOM
+     <b>
+      JUAN
+     </b>
+     <span style="color:#b9afa5;font-weight:700">
+      · PDV
+     </span>
+    </span>
+   </div>
+   <div class="top-right"><a class="btn subtle small" href="index.html" target="_blank" rel="noopener">Abrir site</a>
+    <span class="store-text">
+     Unidade de demonstração
+    </span>
+    <span class="open-status">
+     ● PDV de demonstração
+    </span>
+    <span class="user-chip">
+     M
+    </span>
+   </div>
+  </header>
+  <div class="layout">
+   <aside class="sidebar">
+    <div class="side-label">
+     Operação
+    </div>
+    <button class="nav-btn active" data-page="dashboard">
+     <span class="nav-icon">
+      ▦
+     </span>
+     Painel
+    </button>
+    <button class="nav-btn" data-page="orders">
+     <span class="nav-icon">
+      🧾
+     </span>
+     Pedidos
+    </button>
+    <button class="nav-btn" data-page="menu">
+     <span class="nav-icon">
+      🍕
+     </span>
+     Cardápio
+    </button>
+    <button class="nav-btn" data-page="cash">
+     <span class="nav-icon">
+      💰
+     </span>
+     Caixa
+    </button>
+    <div class="side-bottom">
+     <strong>
+      Ambiente demonstrativo
+     </strong>
+     Os dados são de exemplo e ficam salvos somente neste navegador.
+    </div>
+   </aside>
+   <main class="main">
+    <section class="page active" id="page-dashboard">
+     <div class="page-heading">
+      <div>
+       <div class="eyebrow">
+        Visão geral · hoje
+       </div>
+       <h1>
+        Painel de pedidos
+       </h1>
+       <p>
+        Acompanhe os pedidos e o andamento da cozinha.
+       </p>
+      </div>
+      <div class="actions">
+       <button class="btn subtle" data-go="menu">
+        🍕 Ver cardápio
+       </button>
+       <button class="btn primary" data-open-order="">
+        ＋ Novo pedido
+       </button>
+       <button class="btn subtle" id="add-sample">
+        Simular pedido
+       </button>
+      </div>
+     </div>
+     <div class="stats">
+      <article class="stat">
+       <div class="stat-top">
+        <span>
+         Novos pedidos
+        </span>
+        <span class="stat-icon">
+         🔔
+        </span>
+       </div>
+       <div class="stat-value" id="stat-new">
+        0
+       </div>
+       <div class="stat-note">
+        Aguardando confirmação
+       </div>
+      </article>
+      <article class="stat">
+       <div class="stat-top">
+        <span>
+         Em preparo
+        </span>
+        <span class="stat-icon">
+         🔥
+        </span>
+       </div>
+       <div class="stat-value" id="stat-preparing">
+        0
+       </div>
+       <div class="stat-note">
+        Na fila da cozinha
+       </div>
+      </article>
+      <article class="stat">
+       <div class="stat-top">
+        <span>
+         Prontos
+        </span>
+        <span class="stat-icon">
+         ✅
+        </span>
+       </div>
+       <div class="stat-value" id="stat-ready">
+        0
+       </div>
+       <div class="stat-note">
+        Aguardando retirada ou entrega
+       </div>
+      </article>
+      <article class="stat">
+       <div class="stat-top">
+        <span>
+         Vendas demonstrativas
+        </span>
+        <span class="stat-icon">
+         💵
+        </span>
+       </div>
+       <div class="stat-value" id="stat-sales">
+        R$ 0
+       </div>
+       <div class="stat-note">
+        Somente pedidos concluídos
+       </div>
+      </article>
+     </div>
+     <div class="dashboard-grid">
+      <div class="panel">
+       <div class="panel-header">
+        <div>
+         <h2>
+          Pedidos recentes
+         </h2>
+         <p>
+          Pedidos fictícios para demonstrar o fluxo
+         </p>
+        </div>
+        <button class="text-link" data-go="orders">
+         Ver todos →
+        </button>
+       </div>
+       <div class="order-list" id="recent-orders">
+       </div>
+      </div>
+      <div style="display:grid;gap:15px;align-content:start">
+       <div class="panel">
+        <div class="panel-header">
+         <div>
+          <h2>
+           Movimento do dia
+          </h2>
+          <p>
+           Resumo de pedidos de demonstração
+          </p>
+         </div>
+         <span style="color:#ffb474;font-size:12px;font-weight:850">
+          HOJE
+         </span>
+        </div>
+        <div aria-label="Gráfico ilustrativo" class="mini-chart">
+         <div class="bar-col">
+          <div class="bar" style="height:29%">
+          </div>
+          <span class="bar-label">
+           10h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:44%">
+          </div>
+          <span class="bar-label">
+           11h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:36%">
+          </div>
+          <span class="bar-label">
+           12h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:67%">
+          </div>
+          <span class="bar-label">
+           18h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:88%">
+          </div>
+          <span class="bar-label">
+           19h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:57%">
+          </div>
+          <span class="bar-label">
+           20h
+          </span>
+         </div>
+         <div class="bar-col">
+          <div class="bar" style="height:35%">
+          </div>
+          <span class="bar-label">
+           21h
+          </span>
+         </div>
+        </div>
+        <div class="chart-legend">
+         <span>
+          Quantidade de pedidos por horário
+         </span>
+         <span>
+          Exemplo
+         </span>
+        </div>
+       </div>
+       <div class="panel">
+        <div class="panel-header">
+         <div>
+          <h2>
+           Fila da operação
+          </h2>
+          <p>
+           Pedidos por etapa
+          </p>
+         </div>
+        </div>
+        <div id="queue-summary">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="notice">
+      <strong>
+       Importante:
+      </strong>
+      Nesta demo, pedidos do site e alterações no cardápio aparecem no PDV se as páginas forem abertas na mesma origem e no mesmo navegador. Os dados ficam somente neste navegador; não há servidor, pagamento ou operação real.
+     </div>
+    </section>
+    <section class="page" id="page-orders">
+     <div class="page-heading">
+      <div>
+       <div class="eyebrow">
+        Acompanhe cada etapa
+       </div>
+       <h1>
+        Pedidos
+       </h1>
+       <p>
+        Altere o status para demonstrar o fluxo da operação.
+       </p>
+      </div>
+      <div class="actions">
+       <button class="btn primary" data-open-order="">
+        ＋ Novo pedido
+       </button>
+       <button class="btn subtle" id="add-sample-2">
+        Simular pedido
+       </button>
+      </div>
+     </div>
+     <div class="toolbar">
+      <div class="filters">
+       <button class="filter-btn active" data-filter="todos">
+        Todos
+       </button>
+       <button class="filter-btn" data-filter="novo">
+        Novos
+       </button>
+       <button class="filter-btn" data-filter="preparando">
+        Em preparo
+       </button>
+       <button class="filter-btn" data-filter="pronto">
+        Prontos
+       </button>
+       <button class="filter-btn" data-filter="finalizado">
+        Concluídos
+       </button>
+      </div>
+      <input class="search" id="order-search" placeholder="Buscar cliente ou pedido..." type="search"/>
+     </div>
+     <div class="orders-grid" id="all-orders">
+     </div>
+     <div class="notice">
+      Pedidos e dados são ilustrativos. Site e PDV compartilham as informações somente quando abertos na mesma origem e no mesmo navegador.
+     </div>
+    </section>
+    <section class="page" id="page-menu">
+     <div class="page-heading">
+      <div>
+       <div class="eyebrow">
+        Produtos e disponibilidade
+       </div>
+       <h1>
+        Cardápio
+       </h1>
+       <p>
+        Edite valores e disponibilidade para testar a demonstração.
+       </p>
+      </div>
+     </div>
+     <form class="product-form" id="product-form">
+      <div class="field">
+       <label for="product-name">
+        Nome do produto
+       </label>
+       <input id="product-name" maxlength="50" placeholder="Ex.: Pizza de calabresa" required=""/>
+      </div>
+      <div class="field">
+       <label for="product-category">
+        Categoria
+       </label>
+       <select id="product-category">
+        <option>
+         Tradicional
+        </option>
+        <option>
+         Especial
+        </option>
+        <option>
+         Doce
+        </option>
+        <option>
+         Bebida
+        </option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="product-price">
+        Preço ilustrativo (R$)
+       </label>
+       <input id="product-price" min="0.01" placeholder="39,90" required="" step="0.01" type="number"/>
+      </div>
+      <div class="field">
+       <label for="product-ingredients">
+        Ingredientes / descrição
+       </label>
+       <input id="product-ingredients" maxlength="140" placeholder="Ex.: molho, queijo, calabresa e cebola"/>
+      </div>
+      <div class="field">
+       <label for="product-image">
+        Foto (opcional)
+       </label>
+       <input accept="image/*" id="product-image" type="file"/>
+      </div>
+      <button class="btn primary" type="submit">
+       ＋ Adicionar produto
+      </button>
+     </form>
+     <input accept="image/*" hidden="" id="product-image-picker" type="file"/>
+     <div class="menu-grid" id="menu-grid">
+     </div>
+     <div class="notice">
+      Alterações de nome, categoria, preço, disponibilidade e ingredientes sincronizam com o site nesta demonstração, no mesmo navegador. Não é um sistema de produção.
+     </div>
+    </section>
+    <section class="page" id="page-cash">
+     <div class="page-heading">
+      <div>
+       <div class="eyebrow">
+        Resumo financeiro demonstrativo
+       </div>
+       <h1>
+        Caixa
+       </h1>
+       <p>
+        Resumo dos pedidos fictícios marcados como concluídos.
+       </p>
+      </div>
+     </div>
+     <div class="cash-grid">
+      <div class="cash-box">
+       <span>
+        Vendas concluídas
+       </span>
+       <strong id="cash-sales">
+        R$ 0,00
+       </strong>
+      </div>
+      <div class="cash-box">
+       <span>
+        Pedidos concluídos
+       </span>
+       <strong id="cash-count">
+        0
+       </strong>
+      </div>
+      <div class="cash-box">
+       <span>
+        Ticket médio
+       </span>
+       <strong id="cash-average">
+        R$ 0,00
+       </strong>
+      </div>
+     </div>
+     <div class="panel">
+      <div class="panel-header">
+       <div>
+        <h2>
+         Últimos pedidos concluídos
+        </h2>
+        <p>
+         Valores e pedidos de exemplo, sem movimentação financeira real
+        </p>
+       </div>
+      </div>
+      <div style="overflow:auto">
+       <table class="cash-table">
+        <thead>
+         <tr>
+          <th>
+           Pedido
+          </th>
+          <th>
+           Cliente
+          </th>
+          <th>
+           Pagamento
+          </th>
+          <th>
+           Horário
+          </th>
+          <th>
+           Total
+          </th>
+         </tr>
+        </thead>
+        <tbody id="cash-table">
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div class="notice">
+      Nenhum pagamento é processado por esta demonstração. Formas de pagamento e fechamento de caixa serão configurados conforme a necessidade do cliente.
+     </div>
+    </section>
+   </main>
+  </div>
+  <nav class="mobile-nav">
+   <button class="nav-btn active" data-page="dashboard">
+    <span class="nav-icon">
+     ▦
+    </span>
+    Painel
+   </button>
+   <button class="nav-btn" data-page="orders">
+    <span class="nav-icon">
+     🧾
+    </span>
+    Pedidos
+   </button>
+   <button class="nav-btn" data-page="menu">
+    <span class="nav-icon">
+     🍕
+    </span>
+    Cardápio
+   </button>
+   <button class="nav-btn" data-page="cash">
+    <span class="nav-icon">
+     💰
+    </span>
+    Caixa
+   </button>
+  </nav>
+  <div class="toast" id="toast">
+  </div>
+  <div class="modal-backdrop" hidden="" id="order-modal">
+   <section aria-labelledby="order-modal-title" aria-modal="true" class="modal" role="dialog">
+    <header class="modal-head">
+     <div>
+      <h2 id="order-modal-title">
+       Novo pedido
+      </h2>
+      <p>
+       Monte os itens e personalize a pizza para esta demonstração.
+      </p>
+     </div>
+     <button aria-label="Fechar" class="icon-close" data-close-order="" type="button">
+      ×
+     </button>
+    </header>
+    <div class="modal-body">
+     <div class="modal-grid">
+      <div class="modal-section">
+       <h3>
+        1. Dados do pedido
+       </h3>
+       <div class="modal-fields">
+        <div class="field full">
+         <label for="order-customer">
+          Nome do cliente
+         </label>
+         <input id="order-customer" placeholder="Ex.: Ana Silva"/>
+        </div>
+        <div class="field">
+         <label for="order-type">
+          Tipo
+         </label>
+         <select id="order-type">
+          <option>
+           Entrega
+          </option>
+          <option>
+           Retirada
+          </option>
+         </select>
+        </div>
+        <div class="field">
+         <label for="order-payment">
+          Pagamento
+         </label>
+         <select id="order-payment">
+          <option>
+           Pix · ilustrativo
+          </option>
+          <option>
+           Cartão · ilustrativo
+          </option>
+          <option>
+           Dinheiro · ilustrativo
+          </option>
+          <option>
+           A definir
+          </option>
+         </select>
+        </div>
+        <div class="field full">
+         <label for="order-address">
+          Endereço / observação de retirada
+         </label>
+         <input id="order-address" placeholder="Endereço fictício ou retirada no balcão"/>
+        </div>
+       </div>
+       <h3 style="margin-top:18px">
+        2. Adicionar produto
+       </h3>
+       <div class="modal-fields">
+        <div class="field full">
+         <label for="order-product">
+          Produto do cardápio
+         </label>
+         <select id="order-product">
+         </select>
+        </div>
+        <div class="field">
+         <label for="order-quantity">
+          Quantidade
+         </label>
+         <input id="order-quantity" max="20" min="1" type="number" value="1"/>
+        </div>
+       </div>
+       <div class="pizza-options" hidden="" id="pizza-options">
+        <div class="ingredients-note" id="base-ingredients">
+        </div>
+        <div class="modal-fields">
+         <div class="field">
+          <label for="pizza-size">
+           Tamanho
+          </label>
+          <select id="pizza-size">
+           <option value="1">
+            Grande · 8 pedaços
+           </option>
+           <option value="0.75">
+            Pequena · 4 pedaços
+           </option>
+          </select>
+         </div>
+         <div class="field">
+          <label for="pizza-second-flavor">
+           Segundo sabor (opcional)
+          </label>
+          <select id="pizza-second-flavor">
+          </select>
+         </div>
+         <div class="field">
+          <label for="pizza-sauce">
+           Molho
+          </label>
+          <select id="pizza-sauce">
+           <option>
+            Tomate
+           </option>
+           <option>
+            Molho branco
+           </option>
+           <option>
+            Barbecue
+           </option>
+           <option>
+            Chocolate
+           </option>
+           <option>
+            Doce de leite
+           </option>
+          </select>
+         </div>
+         <div class="field">
+          <label for="pizza-crust">
+           Borda
+          </label>
+          <select id="pizza-crust">
+           <option value="0">
+            Sem borda recheada
+           </option>
+           <option value="7">
+            Requeijão · + R$ 7
+           </option>
+           <option value="7">
+            Cheddar · + R$ 7
+           </option>
+           <option value="8">
+            Chocolate · + R$ 8
+           </option>
+          </select>
+         </div>
+        </div>
+        <div class="field">
+         <label>
+          Extras ilustrativos
+         </label>
+         <div class="extras-list">
+          <label>
+           <input class="pizza-extra" data-name="Bacon" type="checkbox" value="5"/>
+           Bacon + R$ 5
+          </label>
+          <label>
+           <input class="pizza-extra" data-name="Requeijão" type="checkbox" value="5"/>
+           Requeijão + R$ 5
+          </label>
+          <label>
+           <input class="pizza-extra" data-name="Azeitonas" type="checkbox" value="2"/>
+           Azeitonas + R$ 2
+          </label>
+          <label>
+           <input class="pizza-extra" data-name="Queijo extra" type="checkbox" value="4"/>
+           Queijo extra + R$ 4
+          </label>
+         </div>
+        </div>
+        <div class="modal-fields">
+         <div class="field">
+          <label for="remove-ingredients">
+           Retirar ingredientes
+          </label>
+          <input id="remove-ingredients" placeholder="Ex.: cebola, azeitona"/>
+         </div>
+         <div class="field">
+          <label for="add-ingredients">
+           Adicionar ingredientes
+          </label>
+          <input id="add-ingredients" placeholder="Ex.: milho, tomate"/>
+         </div>
+        </div>
+       </div>
+       <div class="modal-actions">
+        <button class="btn primary" id="add-order-line" type="button">
+         ＋ Adicionar item ao pedido
+        </button>
+       </div>
+      </div>
+      <div class="modal-section">
+       <h3>
+        Resumo do pedido
+       </h3>
+       <div class="staged-lines" id="staged-lines">
+        <div class="empty">
+         Adicione uma pizza ou outro produto.
+        </div>
+       </div>
+       <div class="staged-total">
+        <span>
+         Total ilustrativo
+        </span>
+        <span id="staged-total">
+         R$ 0,00
+        </span>
+       </div>
+       <div class="field">
+        <label for="order-note">
+         Observações gerais
+        </label>
+        <input id="order-note" placeholder="Ex.: entregar na portaria"/>
+       </div>
+       <div class="modal-actions">
+        <button class="btn subtle" data-close-order="" type="button">
+         Voltar
+        </button>
+        <button class="btn primary" disabled="" id="save-new-order" type="button">
+         Salvar pedido
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script src="pdv.js">
+  </script>
+ </body>
+</html>

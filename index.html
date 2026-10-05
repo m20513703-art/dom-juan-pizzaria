@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Dom Juan Pizzaria — Demo
+  </title>
+  <meta content="Demonstração fictícia de pizzaria com cardápio e montagem de pizza." name="description"/>
+  <meta content="#11100f" name="theme-color"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body data-open="false" data-view="home">
+  <a class="home-return" href="#inicio">
+   ← Voltar ao início
+  </a>
+  <div class="demo-bar">
+   DEMO FICTÍCIA · CARDÁPIO, CONTATOS E PREÇOS ILUSTRATIVOS
+  </div>
+  <div aria-live="polite" class="business-status closed" id="business-status" role="status">
+   FECHADO · Verificando horário de funcionamento…
+  </div>
+  <header class="header">
+   <div class="wrap nav">
+    <a class="brand" href="#inicio">
+     DOM
+     <b>
+      JUAN
+     </b>
+    </a>
+    <nav class="navlinks">
+     <a href="#inicio">
+      Início
+     </a>
+     <a href="#cardapio">
+      Cardápio
+     </a>
+     <a href="#montar">
+      Monte sua pizza
+     </a>
+     <a href="#bebidas">
+      Bebidas
+     </a>
+     <a href="#historico">
+      Histórico
+     </a>
+     <a href="#horarios">
+      Horários
+     </a>
+     <a href="#contato">
+      Contato
+     </a>
+    </nav>
+    <a class="btn" href="#montar">
+     Montar pedido
+    </a>
+   </div>
+  </header>
+  <main>
+   <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+     <div>
+      <div class="eyebrow">
+       Bem-vindo à pizzaria
+      </div>
+      <h1>
+       Pizzaria
+       <br/>
+       <span>
+        Dom Juan
+       </span>
+      </h1>
+      <p>
+       Pizza quentinha, sabores caprichados e um lugar pra reunir quem você gosta. Explore o cardápio e conheça a pizzaria.
+      </p>
+      <div class="hero-actions">
+       <a class="btn" href="#cardapio">
+        Ver cardápio
+       </a>
+       <a class="btn secondary" href="#montar">
+        Monte sua pizza
+       </a>
+      </div>
+     </div>
+     <div aria-label="Fachada ilustrativa de uma pizzaria fictícia" class="store-photo" role="img">
+      <div class="stamp">
+       <strong>
+        DOM JUAN
+       </strong>
+       <small>
+        Pizza &amp; boa companhia
+       </small>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section aria-label="Atalhos principais" class="section" id="atalhos">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Encontre rapidinho
+      </div>
+      <h2>
+       O que você procura?
+      </h2>
+      <p>
+       Escolha uma opção para abrir o cardápio, falar com a pizzaria ou encontrar outras informações.
+      </p>
+     </div>
+     <div class="quicklinks">
+      <a class="quick-card" href="#cardapio">
+       <div class="quick-icon">
+        🍕
+       </div>
+       <strong>
+        Cardápio
+       </strong>
+       <span>
+        Veja sabores e monte sua pizza
+       </span>
+      </a>
+      <a class="quick-card" href="https://wa.me/5500000000000" rel="noopener" target="_blank">
+       <div class="quick-icon">
+        💬
+       </div>
+       <strong>
+        WhatsApp
+       </strong>
+       <span>
+        Contato da demonstração
+       </span>
+      </a>
+      <a class="quick-card" href="https://www.instagram.com/?hl=en" rel="noopener" target="_blank">
+       <div class="quick-icon">
+        📸
+       </div>
+       <strong>
+        Instagram
+       </strong>
+       <span>
+        Abrir o Instagram
+       </span>
+      </a>
+      <a class="quick-card" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Guanabara%2C+26%2C+Divinolandia%2C+SP" rel="noopener" target="_blank">
+       <div class="quick-icon">
+        📍
+       </div>
+       <strong>
+        Como chegar
+       </strong>
+       <span>
+        Abrir localização no Google Maps
+       </span>
+      </a>
+      <a class="quick-card" href="#quem-somos">
+       <div class="quick-icon">
+        ❤️
+       </div>
+       <strong>
+        Quem somos
+       </strong>
+       <span>
+        Conheça a Dom Juan
+       </span>
+      </a>
+      <a class="quick-card" href="#horarios">
+       <div class="quick-icon">
+        🕒
+       </div>
+       <strong>
+        Horário de funcionamento
+       </strong>
+       <span>
+        Confira os horários
+       </span>
+      </a>
+      <a class="quick-card" href="#historico">
+       <div class="quick-icon">
+        🧾
+       </div>
+       <strong>
+        Histórico de pedidos
+       </strong>
+       <span>
+        Acompanhe seus pedidos do site
+       </span>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="cardapio">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Nosso cardápio
+      </div>
+      <h2>
+       Um sabor pra cada vontade
+      </h2>
+      <p>
+       Confira os ingredientes de cada pizza. Todos os sabores e valores são fictícios nesta demo.
+      </p>
+     </div>
+     <a class="btn secondary back-home" href="#inicio">
+      ← Voltar à página inicial
+     </a>
+     <div class="closed-view-message" id="closed-menu-message" role="status">
+     </div>
+     <div class="menu-group">
+      <h3>
+       🍅 Sabores tradicionais
+      </h3>
+      <div class="flavor-grid" id="traditional-list">
+      </div>
+     </div>
+     <div class="menu-group">
+      <h3>
+       🔥 Sabores especiais
+      </h3>
+      <div class="flavor-grid" id="special-list">
+      </div>
+     </div>
+     <div class="menu-group">
+      <h3>
+       🍫 Pizzas doces
+      </h3>
+      <div class="flavor-grid" id="sweet-list">
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section alt" id="montar">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Personalize do seu jeito
+      </div>
+      <h2>
+       Monte sua pizza
+      </h2>
+      <p>
+       Escolha na ordem: tamanho, dois sabores, borda opcional e complementos.
+      </p>
+     </div>
+     <div class="closed-view-message" id="closed-builder-message" role="status">
+     </div>
+     <div class="builder-grid">
+      <div class="box" id="pizza-builder">
+       <div class="wizard-progress">
+        <span class="pill-tag" id="step-count">
+         Etapa 1 de 4
+        </span>
+       </div>
+       <div class="wizard-step" id="wizard-size">
+        <h3>
+         1. Escolha o tamanho
+        </h3>
+        <div class="size-options">
+         <label class="size-card">
+          <input name="size" type="radio" value="4"/>
+          <span>
+           <strong>
+            Pequena
+           </strong>
+           <small>
+            4 pedaços
+           </small>
+          </span>
+         </label>
+         <label class="size-card">
+          <input name="size" type="radio" value="8"/>
+          <span>
+           <strong>
+            Grande
+           </strong>
+           <small>
+            8 pedaços
+           </small>
+          </span>
+         </label>
+        </div>
+        <button class="btn add-btn" disabled="" id="next-size">
+         Continuar para os sabores
+        </button>
+       </div>
+       <div class="wizard-step" hidden="" id="wizard-flavors">
+        <h3>
+         2. Escolha dois sabores
+        </h3>
+        <p class="small">
+         Escolha entre as pizzas disponíveis. Os preços e a disponibilidade são atualizados no cardápio.
+        </p>
+        <div class="choice-count" id="choice-count">
+         0 de 2 sabores
+        </div>
+        <div class="flavor-choice-grid" id="flavor-choice-grid">
+        </div>
+        <div class="field">
+         <label for="sauce">
+          Molho da pizza (incluído)
+         </label>
+         <select disabled="" id="sauce">
+          <option>
+           Escolha os sabores primeiro
+          </option>
+         </select>
+        </div>
+        <p class="small" id="flavor-message">
+         Escolha dois sabores da mesma categoria: salgados ou doces.
+        </p>
+        <div class="wizard-controls">
+         <button class="btn secondary" data-back="wizard-size">
+          Voltar
+         </button>
+         <button class="btn" disabled="" id="next-border">
+          Continuar para a borda
+         </button>
+        </div>
+       </div>
+       <div class="wizard-step" hidden="" id="wizard-border">
+        <h3>
+         3. Escolha a borda
+        </h3>
+        <p class="small">
+         Se não quiser borda recheada, mantenha “Sem borda”.
+        </p>
+        <div class="field">
+         <label for="border">
+          Borda opcional
+         </label>
+         <select id="border">
+         </select>
+        </div>
+        <div class="wizard-controls">
+         <button class="btn secondary" data-back="wizard-flavors">
+          Voltar
+         </button>
+         <button class="btn" data-next="wizard-complements">
+          Continuar para complementos
+         </button>
+        </div>
+       </div>
+       <div class="wizard-step" hidden="" id="wizard-complements">
+        <h3>
+         4. Complementos
+        </h3>
+        <p class="small">
+         Escolha extras para personalizar sua pizza.
+        </p>
+        <div class="check-list" id="toppings">
+        </div>
+        <div class="wizard-controls">
+         <button class="btn secondary" data-back="wizard-border">
+          Voltar
+         </button>
+         <button class="btn" id="add-pizza">
+          Adicionar pizza ao pedido
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="box">
+       <h3>
+        🧾 Seu pedido
+       </h3>
+       <div id="cart">
+        <p class="cart-empty">
+         Seu pedido de demonstração está vazio.
+        </p>
+       </div>
+       <div class="total">
+        <span>
+         Total de teste
+        </span>
+        <span id="total">
+         R$ 0,00
+        </span>
+       </div>
+       <div class="checkout-box">
+        <h3>
+         Finalizar pedido
+        </h3>
+        <div class="checkout-fields">
+         <div class="field">
+          <label for="customer-name">
+           Nome para o pedido
+          </label>
+          <input id="customer-name" placeholder="Ex.: Cliente de teste" type="text"/>
+         </div>
+         <div class="field">
+          <label for="delivery-type">
+           Tipo do pedido
+          </label>
+          <select id="delivery-type">
+           <option>
+            Entrega
+           </option>
+           <option>
+            Retirada
+           </option>
+          </select>
+         </div>
+         <div class="field full">
+          <label for="customer-address">
+           Endereço ou observação
+          </label>
+          <input id="customer-address" placeholder="Endereço fictício ou retirada no balcão" type="text"/>
+         </div>
+        </div>
+        <button class="btn" disabled="" id="send-to-pdv" type="button">
+         Enviar pedido
+        </button>
+        <p class="small" id="checkout-status">
+         Adicione itens ao pedido para continuar.
+        </p>
+       </div>
+       <div class="notice">
+        <strong>
+         Prazo estimado:
+        </strong>
+        de 60 a 80 minutos (exemplo para esta demonstração).
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="bebidas">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Pra acompanhar
+      </div>
+      <h2>
+       Bebidas
+      </h2>
+      <p>
+       Adicione uma bebida ao pedido de demonstração.
+      </p>
+     </div>
+     <div class="closed-view-message" id="closed-drinks-message" role="status">
+     </div>
+     <div class="drinks-grid" id="drink-list">
+     </div>
+    </div>
+   </section>
+   <section class="section alt" id="historico">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Acompanhe seus pedidos
+      </div>
+      <h2>
+       Histórico de pedidos
+      </h2>
+      <p>
+       Pedidos e status desta demonstração neste navegador.
+      </p>
+     </div>
+     <a class="btn secondary back-home" href="#inicio">
+      ← Voltar à página inicial
+     </a>
+     <div class="history-list" id="order-history-list">
+     </div>
+    </div>
+   </section>
+   <section class="section alt" id="quem-somos">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Quem somos
+      </div>
+      <h2>
+       Uma pizzaria feita para reunir
+      </h2>
+     </div>
+     <div class="info-grid">
+      <article class="info">
+       <h3>
+        Feita com carinho
+       </h3>
+       <p>
+        A Dom Juan é uma marca fictícia criada para apresentar uma ideia de site e de cardápio digital.
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Acompanhe seu pedido
+       </h3>
+       <p>
+        Depois de enviar, confira o andamento pelo Histórico de pedidos do site.
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Uma demo para personalizar
+       </h3>
+       <p>
+        Sabores, preços, endereço, redes sociais e demais informações podem ser ajustados para cada pizzaria.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="horarios">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Quando estamos por aqui
+      </div>
+      <h2>
+       Horário de funcionamento
+      </h2>
+      <p>
+       Horário configurado para esta demonstração: todos os dias, das 8h às 23h. Cardápio e pedidos ficam disponíveis somente nesses períodos.
+      </p>
+     </div>
+     <div class="info-grid">
+      <article class="info">
+       <h3>
+        Segunda-feira
+       </h3>
+       <p>
+        8h às 12h (exemplo)
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Terça a domingo
+       </h3>
+       <p>
+        18h às 23h (exemplo)
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Feriados
+       </h3>
+       <p>
+        Consulte a disponibilidade (exemplo)
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section alt" id="contato">
+    <div class="wrap">
+     <div class="section-head">
+      <div class="eyebrow">
+       Fale com a gente
+      </div>
+      <h2>
+       Contato e localização
+      </h2>
+      <p>
+       Dados e links ilustrativos para visualizar a estrutura do site.
+      </p>
+     </div>
+     <div class="info-grid">
+      <article class="info">
+       <h3>
+        WhatsApp
+       </h3>
+       <p>
+        (00) 00000-0000
+        <br/>
+        <span class="small">
+         Contato ilustrativo; pedidos não são enviados por WhatsApp.
+        </span>
+       </p>
+       <p style="margin-top:13px">
+        <a class="btn" href="https://wa.me/5500000000000" rel="noopener" target="_blank">
+         Abrir WhatsApp
+        </a>
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Localização
+       </h3>
+       <p>
+        Rua Guanabara, 26
+        <br/>
+        Divinolândia – SP
+        <br/>
+        <span class="small">
+         Endereço fictício de demonstração.
+        </span>
+       </p>
+       <p style="margin-top:13px">
+        <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Guanabara%2C+26%2C+Divinolandia%2C+SP" rel="noopener" target="_blank">
+         Como chegar
+        </a>
+       </p>
+      </article>
+      <article class="info">
+       <h3>
+        Instagram
+       </h3>
+       <p>
+        @domjuan.pizzaria
+        <br/>
+        <span class="small">
+         Perfil ilustrativo; o botão abre o Instagram.
+        </span>
+       </p>
+       <p style="margin-top:13px">
+        <a class="btn secondary" href="https://www.instagram.com/?hl=en" rel="noopener" target="_blank">
+         Abrir Instagram
+        </a>
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="wrap">
+    <span>
+     Dom Juan Pizzaria · demonstração fictícia · <a href="pdv.html">Abrir PDV de demonstração</a>
+    </span>
+    <span>
+     Cardápio, preços e prazo estimado ilustrativos · pedidos de demonstração
+    </span>
+   </div>
+  </footer>
+  <script src="script.js">
+  </script>
+ </body>
+</html>
