@@ -45,6 +45,13 @@ button {
     border-bottom: 1px solid #684527
 }
 
+.demo-banner a {
+    color: #fff1e6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap
+}
+
 .topbar {
     height: 72px;
     padding: 0 24px;
